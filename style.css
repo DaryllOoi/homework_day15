@@ -1,0 +1,40 @@
+
+body{
+    text-align: center;
+    max-width: max;
+}
+
+table, th, td {
+    border:2px solid black;
+    border-radius: 10px;
+    margin-left: 600px ;  
+  }
+
+.apple{
+    width: 100px;
+}
+
+a{
+    background-color: green;
+}
+
+p{
+    margin: 15px;
+}
+
+.paragraph{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.hideThis{
+    display: none;
+}
+
+td{
+    border-color: green;
+}
+
+.test{
+    font-size: 100px;
+}
