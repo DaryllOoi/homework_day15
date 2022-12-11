@@ -2,12 +2,13 @@
 body{
     text-align: center;
     max-width: max;
+    background-color: wheat;
 }
 
 table, th, td {
     border:2px solid black;
     border-radius: 10px;
-    margin-left: 600px ;  
+    margin-left: 500px ;  
   }
 
 .apple{
@@ -37,4 +38,12 @@ td{
 
 .test{
     font-size: 100px;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+.pink{
+    border-color: pink;
 }

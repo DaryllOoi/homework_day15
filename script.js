@@ -1,8 +1,10 @@
+//21
 let x="John"
 let y="Doe"
 console.log("exercise 21",x + " <> "+ y);
 
 
+//22
 let objectProfile ={
     Name: "John",
     Surname: "Doe",
@@ -11,6 +13,7 @@ let objectProfile ={
 console.log(objectProfile);
 
 
+//23
 delete objectProfile.Email
 console.log(objectProfile);
 
@@ -50,7 +53,7 @@ function minimumNumber(Array, minNum){
     return minNum
 }
 
-
+//28
 function arrayList(){
     let array1 = Array(2)
     for ( let i = 0 ; i< array1.length;i++){
@@ -67,7 +70,7 @@ function arrayList(){
 }
 console.log(arrayList());
 
-
+//29
 function maximumLength(Array, Array2){
     if (Array.length > Array2.length){
         return Array
@@ -78,7 +81,7 @@ function maximumLength(Array, Array2){
 }
 console.log(maximumLength(arr1, arr2));
 
-
+//30
 function maximumLength(Array, Array2){
     let arr1sum 
     for (let i = 0; i< arr1.length; i++ ){
@@ -97,29 +100,31 @@ function maximumLength(Array, Array2){
 }
 console.log(maximumLength(arr1, arr2));
 
-
+//31
 let container = document.getElementById('container')
 console.log(container);
 
-
+//32
 let allTd = document.getElementsByTagName('td')
 console.log(allTd)
 
 //33
-// function printTdElement() {
+function printTdElement() {
 
-//     let tdText = document.getElementsByTagName('td')
-//     let td1 = []
-//     for (let i = 0; i < tdText; i++) {
-//         td1.push(td.innerText);
-//     }
-//     }
-// console.log(td1);
+    let tdText = document.getElementsByTagName('td')
+    let td1 = []
+    for (let i = 0; i < tdText.length; i++) {
+        td1.push(tdText[i].innerText);
+    }
+return td1;
+}
+
+console.log(printTdElement());
 
 //34
 function changeHeading(){
     
-    document.getElementById('newTitle').innerHTML = "new Title"
+    document.getElementById('newTitle').innerHTML = "new Title created by java"
     
 }
 console.log(changeHeading());
@@ -127,19 +132,35 @@ console.log(changeHeading());
 //35
 function addExtraRow(){
     let table = document.getElementById('myTable')
-    let row = table.insertRow(0);
-    let cell1= row.insertCell (0);
-    cell1.innerHTML="New Cell 1";
+    let newRow = document.createElement('tr')
+    newRow.innerText = 'this is a new row';
+    table.appendChild(newRow);
 }
 addExtraRow();
 
-
+//36
 function addClassTest(){
     let newClass = document.getElementsByTagName('tr')
     newClass.setAttribute('class','test');
 }
 
+//37
+function addRedBackgroundToLinks() {
+    let aLinks = document.getElementsByTagName("a");
+    for ( let i = 0 ; i < aLinks.length; i++){
+        aLinks[i].style.backgroundColor = 'red';
+    }
+  }
+addRedBackgroundToLinks();
 
+//38
+function onLoadActions(){
+    console.log('Page successfully loaded!');
+}
+window.onload = onLoadActions;
+
+
+//39
 function addItems(){
     let ulList = document.querySelector('ul')
     let liList = document.querySelector('li')
@@ -147,3 +168,92 @@ function addItems(){
     ulList.appendChild(liList);
 }
 addItems();
+
+
+//40
+function emptyList(){
+    let ulList = document.querySelector('ol')
+    let liList = document.querySelectorAll('ol li')
+
+    for ( let i = 0; i < liList.length; i++){
+        ulList.removeChild(liList[i]);
+    }
+}
+emptyList()
+
+
+//41
+let alertLink = document.getElementsByTagName('a')
+for ( let i = 0; i< alertLink.length; i++){
+    alertLink[i].addEventListener("mouseover",function(){
+        alert(alertLink[i].getAttribute('href'));
+    });
+}
+
+//42
+function hideImages(){
+    let images = document.getElementsByTagName('img')
+    for ( let image of images){
+        image.classList.toggle('hide');
+    }
+}
+
+//43
+function hideTable(){
+    let table = document.querySelector('table')
+    table.classList.toggle("hide");    
+}
+
+//44
+function sumOfAllNumbers(){
+    let tableData = document.querySelectorAll('td')
+    let sumOfData = 0
+
+    for ( let data of tableData){
+        let dataText = data.innerText
+        let dataInteger = parseInt(dataText)
+
+        if (!isNaN(dataInteger)){
+            sumOfData += dataInteger;
+        }
+    }
+    return sumOfData;
+}
+
+//45
+function deleteLastHeading(){
+    let deleteThis = document.getElementsByTagName('h1')[0]
+    deleteThis.addEventListener('click', function(event){
+        event.target.innerText = event.target.innerText.slice(0, -1);
+    });
+}
+deleteLastHeading();
+
+//46
+function changeTdBackground(){
+    for ( let changeThat of allTd){
+    changeThat.addEventListener('click', function(event){
+    changeThat.style.backgroundColor = "red";
+    });
+}
+}
+changeTdBackground();
+
+//47
+function deleteRandomTd(){
+    let random = Math.floor(Math.random()*allTd.length);
+    let randomTd = allTd[random];
+
+    let parent = allTd[random].closest('tr');
+
+    parent.removeChild(randomTd);
+}
+
+//48
+for ( let data of allTd){
+    data.addEventListener("mouseover",function(){
+        data.classList.add("pink");
+    });
+}
+
+
